@@ -87,6 +87,10 @@
       cursor: default;
     }
 
+    .nav-item[data-open-screen] {
+      cursor: pointer;
+    }
+
     .nav-item.active {
       background: var(--green);
       color: #fff;
@@ -1252,6 +1256,235 @@
       font-weight: 400;
     }
 
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .chart-box {
+      min-height: 300px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .chart-box h3 {
+      margin: 0 0 6px;
+      color: #273341;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .chart-subtitle {
+      color: #718092;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .combo-chart {
+      height: 210px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      align-items: end;
+      padding: 0 6px 28px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+
+    .combo-chart::before {
+      content: "оценка жителей";
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      color: #8b95a5;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .combo-column {
+      height: 100%;
+      display: grid;
+      align-items: end;
+      position: relative;
+    }
+
+    .combo-bar {
+      width: 100%;
+      min-height: 22px;
+      border-radius: 4px 4px 0 0;
+      background: linear-gradient(180deg, #4fb3d9, var(--blue));
+      position: relative;
+    }
+
+    .combo-bar span {
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 6px);
+      transform: translateX(-50%);
+      color: #536071;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .score-marker {
+      position: absolute;
+      left: 50%;
+      width: 38px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      transform: translate(-50%, 50%);
+      border-radius: 4px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(33,43,54,0.18);
+    }
+
+    .chart-label {
+      position: absolute;
+      left: 50%;
+      bottom: -26px;
+      transform: translateX(-50%);
+      color: #718092;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-top: 14px;
+      color: #677386;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      background: var(--blue);
+    }
+
+    .legend-swatch.orange { background: var(--orange); }
+    .legend-swatch.green { background: var(--green); }
+    .legend-swatch.red { background: var(--red); }
+
+    .sla-chart {
+      display: grid;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .sla-row {
+      display: grid;
+      grid-template-columns: 64px 1fr 46px;
+      gap: 12px;
+      align-items: center;
+      color: #536071;
+      font-weight: 700;
+    }
+
+    .sla-stack {
+      height: 26px;
+      display: flex;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #eef1f4;
+    }
+
+    .sla-seg.good { background: var(--green); }
+    .sla-seg.warn { background: var(--orange); }
+    .sla-seg.bad { background: var(--red); }
+
+    .employee-summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .employee-card-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 22px;
+      align-items: start;
+      margin-top: 22px;
+    }
+
+    .employee-table {
+      min-width: 980px;
+    }
+
+    .employee-name {
+      border: 0;
+      background: transparent;
+      color: var(--purple);
+      font: inherit;
+      font-weight: 700;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .employee-row.selected {
+      background: #f2fbf4;
+      outline: 2px solid rgba(69,173,79,0.28);
+      outline-offset: -2px;
+    }
+
+    .service-quality {
+      display: grid;
+      gap: 12px;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service-row strong {
+      display: block;
+      color: #202938;
+      margin-bottom: 5px;
+    }
+
+    .service-meter {
+      width: 190px;
+      height: 10px;
+      border-radius: 4px;
+      background: #eef1f4;
+      overflow: hidden;
+    }
+
+    .service-meter span {
+      display: block;
+      height: 100%;
+      background: var(--green);
+    }
+
+    .service-meter.warn span { background: var(--orange); }
+    .service-meter.bad span { background: var(--red); }
+
     @media (max-width: 1180px) {
       .app {
         grid-template-columns: 88px 1fr;
@@ -1270,7 +1503,10 @@
       .reaction-board,
       .quality-two-col,
       .quality-metrics,
-      .quality-filters {
+      .quality-filters,
+      .analytics-grid,
+      .employee-summary,
+      .employee-card-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1320,7 +1556,10 @@
       .reaction-board,
       .quality-two-col,
       .quality-metrics,
-      .quality-filters {
+      .quality-filters,
+      .analytics-grid,
+      .employee-summary,
+      .employee-card-grid {
         gap: 14px;
       }
 
@@ -1360,12 +1599,12 @@
         <span class="logo-mark"></span>
         <span>Мой<br>дом<br>онлайн</span>
       </div>
-      <div class="nav-item active"><span class="nav-icon">▦</span><span>Моя компания</span></div>
+      <div class="nav-item active" data-open-screen="dashboard"><span class="nav-icon">▦</span><span>Моя компания</span></div>
       <div class="nav-item"><span class="nav-icon">▥</span><span>Шахматка</span></div>
       <div class="nav-item"><span class="nav-icon">●</span><span>Жители</span></div>
-      <div class="nav-item"><span class="nav-icon">◉</span><span>Сотрудники</span></div>
+      <div class="nav-item" data-open-screen="employees"><span class="nav-icon">◉</span><span>Сотрудники</span></div>
       <div class="nav-item"><span class="nav-icon">☑</span><span>Задачи</span></div>
-      <div class="nav-item active"><span class="nav-icon">▣</span><span>Заявки</span></div>
+      <div class="nav-item" data-open-screen="requests"><span class="nav-icon">▣</span><span>Заявки</span></div>
       <div class="nav-item"><span class="nav-icon">▤</span><span>Заказы услуг</span></div>
       <div class="nav-item"><span class="nav-icon">☎</span><span>Звонки</span></div>
       <div class="dispatcher-phone">
@@ -1393,6 +1632,7 @@
         <button class="switch-button active" data-target="dashboard">Главный экран</button>
         <button class="switch-button" data-target="quality">Качество заявок</button>
         <button class="switch-button" data-target="requests">Модуль заявок</button>
+        <button class="switch-button" data-target="employees">Сотрудники</button>
       </div>
 
       <section id="dashboard" class="screen active">
@@ -1498,29 +1738,52 @@
         </div>
 
         <div class="quality-two-col">
-          <section class="wide-panel matrix-card">
+          <section class="wide-panel">
             <div class="panel-head">
               <div>
-                <div class="panel-kicker">Сравнение</div>
-                <h2>Оценка жителей × SLA исполнителей</h2>
+                <div class="panel-kicker">Динамика</div>
+                <h2>Нагрузка, оценки жителей и SLA</h2>
               </div>
-              <span class="soft-pill warn">6 исполнителей</span>
+              <span class="soft-pill warn">30 дней</span>
             </div>
-            <div class="matrix">
-              <div class="quadrant fast-low">Сроки соблюдает, жители недовольны</div>
-              <div class="quadrant good">Лучшие: высокий SLA и оценка</div>
-              <div class="quadrant risk">Риск: низкий SLA и низкая оценка</div>
-              <div class="quadrant late-loved">Жители довольны, но сроки срываются</div>
-              <span class="axis-label y">Оценка жителей ↑</span>
-              <span class="axis-label x">SLA в срок →</span>
-              <span class="matrix-point" style="left:82%; top:18%"><span>Гришко · 4.8 / 96%</span></span>
-              <span class="matrix-point info" style="left:70%; top:26%"><span>Диспетчерова · 4.5 / 88%</span></span>
-              <span class="matrix-point warn" style="left:44%; top:46%"><span>Дежурнов · 3.6 / 58%</span></span>
-              <span class="matrix-point bad" style="left:28%; top:68%"><span>Повар · 2.9 / 44%</span></span>
-              <span class="matrix-point bad" style="left:20%; top:74%"><span>Волков · 2.6 / 38%</span></span>
+            <div class="analytics-grid">
+              <div class="chart-box">
+                <h3>Заявки и оценка жителей</h3>
+                <div class="chart-subtitle">Столбцы — закрытые заявки, оранжевые метки — средняя оценка недели</div>
+                <div class="combo-chart">
+                  <div class="combo-column"><div class="combo-bar" style="height:62%"><span>118</span></div><span class="score-marker" style="bottom:74%">4.5</span><span class="chart-label">1 нед.</span></div>
+                  <div class="combo-column"><div class="combo-bar" style="height:78%"><span>146</span></div><span class="score-marker" style="bottom:70%">4.3</span><span class="chart-label">2 нед.</span></div>
+                  <div class="combo-column"><div class="combo-bar" style="height:92%"><span>172</span></div><span class="score-marker" style="bottom:58%">3.8</span><span class="chart-label">3 нед.</span></div>
+                  <div class="combo-column"><div class="combo-bar" style="height:70%"><span>131</span></div><span class="score-marker" style="bottom:54%">3.6</span><span class="chart-label">4 нед.</span></div>
+                  <div class="combo-column"><div class="combo-bar" style="height:82%"><span>154</span></div><span class="score-marker" style="bottom:66%">4.1</span><span class="chart-label">5 нед.</span></div>
+                  <div class="combo-column"><div class="combo-bar" style="height:68%"><span>127</span></div><span class="score-marker" style="bottom:76%">4.6</span><span class="chart-label">6 нед.</span></div>
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-item"><span class="legend-swatch"></span>Закрытые заявки</span>
+                  <span class="legend-item"><span class="legend-swatch orange"></span>Средняя оценка жителей</span>
+                </div>
+              </div>
+
+              <div class="chart-box">
+                <h3>SLA по срокам</h3>
+                <div class="chart-subtitle">Доля заявок в срок, с опозданием и просроченных по неделям</div>
+                <div class="sla-chart">
+                  <div class="sla-row"><span>1 нед.</span><div class="sla-stack"><span class="sla-seg good" style="width:72%"></span><span class="sla-seg warn" style="width:20%"></span><span class="sla-seg bad" style="width:8%"></span></div><strong>72%</strong></div>
+                  <div class="sla-row"><span>2 нед.</span><div class="sla-stack"><span class="sla-seg good" style="width:64%"></span><span class="sla-seg warn" style="width:24%"></span><span class="sla-seg bad" style="width:12%"></span></div><strong>64%</strong></div>
+                  <div class="sla-row"><span>3 нед.</span><div class="sla-stack"><span class="sla-seg good" style="width:41%"></span><span class="sla-seg warn" style="width:36%"></span><span class="sla-seg bad" style="width:23%"></span></div><strong>41%</strong></div>
+                  <div class="sla-row"><span>4 нед.</span><div class="sla-stack"><span class="sla-seg good" style="width:38%"></span><span class="sla-seg warn" style="width:34%"></span><span class="sla-seg bad" style="width:28%"></span></div><strong>38%</strong></div>
+                  <div class="sla-row"><span>5 нед.</span><div class="sla-stack"><span class="sla-seg good" style="width:52%"></span><span class="sla-seg warn" style="width:31%"></span><span class="sla-seg bad" style="width:17%"></span></div><strong>52%</strong></div>
+                  <div class="sla-row"><span>6 нед.</span><div class="sla-stack"><span class="sla-seg good" style="width:69%"></span><span class="sla-seg warn" style="width:22%"></span><span class="sla-seg bad" style="width:9%"></span></div><strong>69%</strong></div>
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-item"><span class="legend-swatch green"></span>В срок</span>
+                  <span class="legend-item"><span class="legend-swatch orange"></span>С опозданием</span>
+                  <span class="legend-item"><span class="legend-swatch red"></span>Просрочено</span>
+                </div>
+              </div>
             </div>
             <div class="principle-note">
-              Рейтинг исполнителя строится только по оценкам жителей. SLA показывается рядом как операционный показатель, чтобы директор видел связь качества и сроков, но не смешивал их в одну оценку.
+              Если заявок становится больше, а оценка и SLA падают одновременно, директор видит не просто плохой рейтинг, а перегруз службы или конкретных исполнителей.
             </div>
           </section>
 
@@ -1732,7 +1995,6 @@
               <button class="action-button primary">Связаться</button>
               <button class="action-button warn">Поставить задачу</button>
               <button class="action-button bad">Вернуть в работу</button>
-              <button class="action-button">Отметить обработанной</button>
             </div>
           </aside>
         </div>
@@ -1771,12 +2033,193 @@
           </section>
         </div>
       </section>
+
+      <section id="employees" class="screen">
+        <div class="requests-simple-head">
+          <h2>Сотрудники</h2>
+          <p>Качество работы сотрудников и служб по заявкам, оценкам жителей и SLA</p>
+        </div>
+
+        <div class="employee-summary">
+          <article class="quality-metric">
+            <div class="label">Сотрудников в заявках</div>
+            <div class="big">24</div>
+            <div class="muted">18 исполнителей · 6 диспетчеров и мастеров</div>
+          </article>
+          <article class="quality-metric">
+            <div class="label">Средняя оценка</div>
+            <div class="big">4.1</div>
+            <div class="stars">★★★★☆</div>
+            <div class="muted">только оценки жителей после закрытия</div>
+          </article>
+          <article class="quality-metric">
+            <div class="label">SLA служб</div>
+            <div class="big">74%</div>
+            <div class="muted">в срок по закрытым заявкам за 30 дней</div>
+          </article>
+          <article class="quality-metric bad">
+            <div class="label">Требуют внимания</div>
+            <div class="big">5</div>
+            <div class="muted">низкая оценка или SLA ниже порога</div>
+          </article>
+        </div>
+
+        <div class="quality-two-col">
+          <section class="wide-panel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-kicker">Службы</div>
+                <h2>Качество работы служб</h2>
+              </div>
+              <span class="soft-pill good">4 службы</span>
+            </div>
+            <div class="service-quality">
+              <div class="service-row">
+                <div><strong>Сантехника</strong><span class="muted">оценка 4.4 · SLA 82% · 8 просрочены</span></div>
+                <div class="service-meter"><span style="width:82%"></span></div>
+              </div>
+              <div class="service-row">
+                <div><strong>Электрика</strong><span class="muted">оценка 4.2 · SLA 76% · 6 просрочены</span></div>
+                <div class="service-meter"><span style="width:76%"></span></div>
+              </div>
+              <div class="service-row">
+                <div><strong>Слесари</strong><span class="muted">оценка 3.7 · SLA 61% · 11 просрочены</span></div>
+                <div class="service-meter warn"><span style="width:61%"></span></div>
+              </div>
+              <div class="service-row">
+                <div><strong>Разнорабочие</strong><span class="muted">оценка 2.9 · SLA 44% · 9 просрочены</span></div>
+                <div class="service-meter bad"><span style="width:44%"></span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="wide-panel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-kicker">Рейтинг</div>
+                <h2>Лучшие и рисковые сотрудники</h2>
+              </div>
+            </div>
+            <div class="performer-list">
+              <div class="performer-row">
+                <div><strong>1. Гришко Г. А.</strong><span class="muted">лучший по оценке · SLA 96%</span></div>
+                <span class="score-pill good">4.8</span>
+              </div>
+              <div class="performer-row">
+                <div><strong>2. Диспетчерова О. В.</strong><span class="muted">стабильно закрывает без жалоб</span></div>
+                <span class="score-pill good">4.5</span>
+              </div>
+              <div class="performer-row">
+                <div><strong>Дежурнов В. И.</strong><span class="muted">7 низких оценок · 2 просрочены</span></div>
+                <span class="score-pill warn">3.6</span>
+              </div>
+              <div class="performer-row">
+                <div><strong>Михаил Волков</strong><span class="muted">низкая оценка и SLA 38%</span></div>
+                <span class="score-pill bad">2.6</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="employee-card-grid">
+          <section class="requests-shell table-wrap">
+            <table class="request-table simple employee-table">
+              <thead>
+                <tr>
+                  <th>Сотрудник</th>
+                  <th style="width:170px">Служба</th>
+                  <th style="width:140px">Оценка</th>
+                  <th style="width:130px">Закрыто 30д</th>
+                  <th style="width:130px">В работе</th>
+                  <th style="width:120px">SLA</th>
+                  <th style="width:150px">Риск</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="employee-row selected" data-name="Дежурнов В. И." data-role="Сантехник" data-score="3.6" data-stars="★★★★☆" data-closed="43" data-work="11" data-sla="58%" data-late="6" data-overdue="2" data-low="7" data-comment="7 низких оценок за 30 дней. Чаще всего жители жалуются на ожидание и отсутствие обратной связи.">
+                  <td><button class="employee-name">Дежурнов В. И.</button></td>
+                  <td>Сантехника</td>
+                  <td><span class="score-pill warn">3.6</span></td>
+                  <td>43</td>
+                  <td>11</td>
+                  <td>58%</td>
+                  <td><span class="soft-pill warn">Внимание</span></td>
+                </tr>
+                <tr class="employee-row" data-name="Гришко Г. А." data-role="Сантехник" data-score="4.8" data-stars="★★★★★" data-closed="42" data-work="5" data-sla="96%" data-late="1" data-overdue="0" data-low="1" data-comment="Лучший исполнитель месяца: высокая оценка жителей и почти все заявки закрыты в срок.">
+                  <td><button class="employee-name">Гришко Г. А.</button></td>
+                  <td>Сантехника</td>
+                  <td><span class="score-pill good">4.8</span></td>
+                  <td>42</td>
+                  <td>5</td>
+                  <td>96%</td>
+                  <td><span class="soft-pill good">Эксперт</span></td>
+                </tr>
+                <tr class="employee-row" data-name="Диспетчерова О. В." data-role="Диспетчер" data-score="4.5" data-stars="★★★★☆" data-closed="66" data-work="14" data-sla="88%" data-late="3" data-overdue="0" data-low="2" data-comment="Стабильная работа по закрытию и коммуникации. Низкие оценки редкие, просрочек сейчас нет.">
+                  <td><button class="employee-name">Диспетчерова О. В.</button></td>
+                  <td>Диспетчерская</td>
+                  <td><span class="score-pill good">4.5</span></td>
+                  <td>66</td>
+                  <td>14</td>
+                  <td>88%</td>
+                  <td><span class="soft-pill good">Профи</span></td>
+                </tr>
+                <tr class="employee-row" data-name="Повар А." data-role="Бухгалтерия" data-score="2.9" data-stars="★★★☆☆" data-closed="22" data-work="7" data-sla="44%" data-late="5" data-overdue="1" data-low="6" data-comment="Низкая оценка связана с долгим ответом и непонятной коммуникацией по начислениям.">
+                  <td><button class="employee-name">Повар А.</button></td>
+                  <td>Бухгалтерия</td>
+                  <td><span class="score-pill bad">2.9</span></td>
+                  <td>22</td>
+                  <td>7</td>
+                  <td>44%</td>
+                  <td><span class="soft-pill bad">Риск</span></td>
+                </tr>
+                <tr class="employee-row" data-name="Михаил Волков" data-role="Электрик" data-score="2.6" data-stars="★★★☆☆" data-closed="19" data-work="9" data-sla="38%" data-late="4" data-overdue="3" data-low="8" data-comment="Попадает в группу риска: низкая оценка жителей, много просрочек и незакрытые реакции по качеству.">
+                  <td><button class="employee-name">Михаил Волков</button></td>
+                  <td>Электрика</td>
+                  <td><span class="score-pill bad">2.6</span></td>
+                  <td>19</td>
+                  <td>9</td>
+                  <td>38%</td>
+                  <td><span class="soft-pill bad">Риск</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <aside class="detail-panel">
+            <div class="panel-kicker">Карточка сотрудника</div>
+            <h2 id="employee-card-name">Дежурнов В. И.</h2>
+            <div class="muted" id="employee-card-role">Сантехник</div>
+            <div class="detail-score">
+              <div class="score-large" id="employee-card-score" style="background:var(--orange)">3.6</div>
+              <div>
+                <div class="stars" id="employee-card-stars">★★★★☆</div>
+                <div class="muted">оценка жителей · 30 дней</div>
+              </div>
+            </div>
+            <div class="comment" id="employee-card-comment">
+              7 низких оценок за 30 дней. Чаще всего жители жалуются на ожидание и отсутствие обратной связи.
+            </div>
+            <div class="detail-stat"><span>Закрыто за 30 дней</span><strong id="employee-card-closed">43</strong></div>
+            <div class="detail-stat"><span>Сейчас в работе</span><strong id="employee-card-work">11</strong></div>
+            <div class="detail-stat"><span>SLA в срок</span><strong id="employee-card-sla">58%</strong></div>
+            <div class="detail-stat"><span>С опозданием выполнено</span><strong id="employee-card-late">6</strong></div>
+            <div class="detail-stat"><span>Просрочено сейчас</span><strong id="employee-card-overdue" style="color:var(--red)">2</strong></div>
+            <div class="detail-stat"><span>Низкие оценки</span><strong id="employee-card-low" style="color:var(--red)">7</strong></div>
+            <div class="action-row">
+              <button class="action-button primary">Связаться</button>
+              <button class="action-button warn">Поставить задачу</button>
+              <button class="action-button bad">Вернуть в работу</button>
+            </div>
+          </aside>
+        </div>
+      </section>
     </main>
   </div>
 
   <script>
     const buttons = document.querySelectorAll('.switch-button');
     const screens = document.querySelectorAll('.screen');
+    const navItems = document.querySelectorAll('.nav-item[data-open-screen]');
 
     function activateScreen(target) {
       buttons.forEach((item) => item.classList.remove('active'));
@@ -1786,6 +2229,10 @@
       if (!button || !screen) return;
       button.classList.add('active');
       screen.classList.add('active');
+      navItems.forEach((item) => {
+        const navTarget = target === 'quality' ? 'requests' : target;
+        item.classList.toggle('active', item.dataset.openScreen === navTarget);
+      });
     }
 
     buttons.forEach((button) => {
@@ -1831,9 +2278,49 @@
       });
     });
 
+    const employeeRows = document.querySelectorAll('.employee-row');
+    const employeeFields = {
+      name: document.getElementById('employee-card-name'),
+      role: document.getElementById('employee-card-role'),
+      score: document.getElementById('employee-card-score'),
+      stars: document.getElementById('employee-card-stars'),
+      comment: document.getElementById('employee-card-comment'),
+      closed: document.getElementById('employee-card-closed'),
+      work: document.getElementById('employee-card-work'),
+      sla: document.getElementById('employee-card-sla'),
+      late: document.getElementById('employee-card-late'),
+      overdue: document.getElementById('employee-card-overdue'),
+      low: document.getElementById('employee-card-low')
+    };
+
+    function scoreColor(score) {
+      const value = Number(score);
+      if (value >= 4.2) return 'var(--green)';
+      if (value >= 3.4) return 'var(--orange)';
+      return 'var(--red)';
+    }
+
+    employeeRows.forEach((row) => {
+      row.addEventListener('click', () => {
+        employeeRows.forEach((item) => item.classList.remove('selected'));
+        row.classList.add('selected');
+        employeeFields.name.textContent = row.dataset.name;
+        employeeFields.role.textContent = row.dataset.role;
+        employeeFields.score.textContent = row.dataset.score;
+        employeeFields.score.style.background = scoreColor(row.dataset.score);
+        employeeFields.stars.textContent = row.dataset.stars;
+        employeeFields.comment.textContent = row.dataset.comment;
+        employeeFields.closed.textContent = row.dataset.closed;
+        employeeFields.work.textContent = row.dataset.work;
+        employeeFields.sla.textContent = row.dataset.sla;
+        employeeFields.late.textContent = row.dataset.late;
+        employeeFields.overdue.textContent = row.dataset.overdue;
+        employeeFields.low.textContent = row.dataset.low;
+      });
+    });
+
     document.querySelectorAll('.mini-button, .action-button').forEach((button) => {
       button.addEventListener('click', () => {
-        button.textContent = button.textContent === 'Отметить обработанной' ? 'Обработано' : button.textContent;
         button.classList.add('primary');
       });
     });
