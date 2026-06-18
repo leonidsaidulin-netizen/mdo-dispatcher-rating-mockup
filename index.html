@@ -1807,11 +1807,11 @@
             <div class="quality-links" aria-label="Показатели качества заявок">
               <button class="quality-link" data-open-screen="quality" title="Открыть страницу качества заявок: оценки жителей, комментарии и динамика">
                 <span class="value">4.3</span>
-                <span><strong>Оценка жителей</strong><small>621 оценка по закрытым заявкам</small></span>
+                <span><strong>Оценка жителей</strong><small>621 из 838 закрытых заявок оценены</small></span>
                 <span>→</span>
               </button>
               <button class="quality-link warn" data-open-screen="quality" title="Открыть анализ SLA по срокам выполнения заявок">
-                <span class="value">38%</span>
+                <span class="value">74%</span>
                 <span><strong>SLA в срок</strong><small>сроки отдельно от оценки жителей</small></span>
                 <span>→</span>
               </button>
@@ -1878,13 +1878,13 @@
             <div class="label">Оценка жителей</div>
             <div class="big">4.3</div>
             <div class="stars">★★★★☆</div>
-            <div class="muted">+0.2 к прошлому периоду · 621 оценка</div>
+            <div class="muted">621 оценка из 838 закрытых · охват 74%</div>
             <div class="metric-note">рейтинг только от жителей</div>
           </article>
           <article class="quality-metric" data-open-screen="requests" title="Открыть заявки с контролем SLA">
             <div class="label">SLA в срок</div>
-            <div class="big">38%</div>
-            <div class="muted">из 10 закрытых заявок с нормой SLA за период</div>
+            <div class="big">74%</div>
+            <div class="muted">335 из 452 закрытых заявок с SLA-нормой за 30 дней</div>
             <div class="metric-note warn">операционный показатель</div>
           </article>
           <article class="quality-metric bad" data-open-screen="requests" data-filter-target="reaction" title="Открыть очередь заявок, требующих реакции">
@@ -1986,8 +1986,8 @@
                 <span class="score-pill good">4.5</span>
               </div>
               <div class="performer-row">
-                <div><strong>Дежурнов В. И.</strong><span class="muted">7 низких оценок · 2 просрочены сейчас</span></div>
-                <span class="score-pill warn">3.6</span>
+                <div><strong>Дежурнов В. И.</strong><span class="muted">7 низких оценок · SLA 58% · риск</span></div>
+                <span class="score-pill bad">3.6</span>
               </div>
               <div class="performer-row">
                 <div><strong>Повар А.</strong><span class="muted">18 оценок · SLA 44%</span></div>
@@ -2002,6 +2002,7 @@
             <div>
               <div class="panel-kicker">Очередь реакции</div>
               <h2>Очередь реакции по качеству</h2>
+              <div class="muted">Показано 4 критичных из 18 заявок в очереди</div>
             </div>
             <button class="mini-button primary" data-open-screen="requests" data-filter-target="reaction">Открыть в заявках</button>
           </div>
@@ -2015,6 +2016,7 @@
                 <th style="width:140px">SLA</th>
                 <th style="width:170px">Причина</th>
                 <th style="width:130px">Ответственный</th>
+                <th style="width:120px">SLA реакции</th>
                 <th style="width:150px">Действие</th>
               </tr>
             </thead>
@@ -2022,11 +2024,12 @@
               <tr>
                 <td><span class="request-id teal">9188</span></td>
                 <td><span class="click-cell" data-open-screen="requests" data-filter-target="reaction">Крыша уехала</span><div class="muted">Ленина, 55 · авария</div></td>
-                <td><span class="soft-pill bad">Директор И. И.</span></td>
+                <td><span class="soft-pill bad">Кровельщик А.</span></td>
                 <td><span class="rating-cell"><span class="stars">★☆☆☆☆</span><strong>1.0</strong></span></td>
                 <td><span class="sla-pill bad">Просрочена +6ч</span></td>
                 <td><span class="soft-pill bad">Проблема не решена</span></td>
-                <td><span class="soft-pill bad">Директор · 2ч</span></td>
+                <td><span class="soft-pill bad">Директор</span></td>
+                <td><span class="soft-pill bad">2ч</span></td>
                 <td><button class="mini-button primary">Вернуть в работу</button></td>
               </tr>
               <tr>
@@ -2036,7 +2039,8 @@
                 <td><span class="rating-cell"><span class="stars">★★☆☆☆</span><strong>2.0</strong></span></td>
                 <td><span class="sla-pill warn">С опозданием +8ч</span></td>
                 <td><span class="soft-pill warn">Долго ждали</span></td>
-                <td><span class="soft-pill warn">Диспетчер · 4ч</span></td>
+                <td><span class="soft-pill warn">Диспетчер</span></td>
+                <td><span class="soft-pill warn">4ч</span></td>
                 <td><button class="mini-button">Связаться</button></td>
               </tr>
               <tr>
@@ -2046,7 +2050,8 @@
                 <td><span class="muted">нет оценки</span></td>
                 <td><span class="sla-pill good">В срок -2ч</span></td>
                 <td><span class="soft-pill empty">Без оценки 48ч+</span></td>
-                <td><span class="soft-pill empty">Робот · сегодня</span></td>
+                <td><span class="soft-pill empty">Робот</span></td>
+                <td><span class="soft-pill empty">сегодня</span></td>
                 <td><button class="mini-button">Автообзвон</button></td>
               </tr>
             </tbody>
@@ -2062,7 +2067,7 @@
 
         <section class="requests-shell">
           <div class="request-status-strip">
-            <button class="request-status-tab urgent active" data-filter="reaction">Требуют реакции<small>18</small></button>
+            <button class="request-status-tab urgent active" data-filter="reaction">Требуют реакции<small>4 из 18</small></button>
             <button class="request-status-tab" data-filter="all">Все<small>3669</small></button>
             <button class="request-status-tab">Новые<small>807</small></button>
             <button class="request-status-tab">Назначены<small>1022</small></button>
@@ -2085,6 +2090,7 @@
                   <th style="width:120px">Оценка</th>
                   <th style="width:160px">Причина</th>
                   <th style="width:135px">Ответственный</th>
+                  <th style="width:115px">SLA реакции</th>
                   <th style="width:150px">Действие</th>
                 </tr>
               </thead>
@@ -2097,6 +2103,7 @@
                   <td><span class="rating-cell"><span class="stars">★★★★★</span><strong>5.0</strong></span></td>
                   <td><span class="soft-pill good">Нет риска</span></td>
                   <td><span class="soft-pill empty">-</span></td>
+                  <td><span class="soft-pill empty">-</span></td>
                   <td><span class="soft-pill empty">Не требуется</span></td>
                 </tr>
                 <tr class="selected" data-flags="all reaction low overdue">
@@ -2106,7 +2113,8 @@
                   <td><span class="sla-pill warn">С опозданием +8ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★★☆☆☆</span><strong>2.0</strong></span></td>
                   <td><span class="soft-pill warn">Долго ждали</span></td>
-                  <td><span class="soft-pill warn">Диспетчер · 4ч</span></td>
+                  <td><span class="soft-pill warn">Диспетчер</span></td>
+                  <td><span class="soft-pill warn">4ч</span></td>
                   <td><span class="soft-pill warn">Связаться</span></td>
                 </tr>
                 <tr data-flags="all reaction norate">
@@ -2116,27 +2124,30 @@
                   <td><span class="sla-pill good">В срок -2ч</span></td>
                   <td><span class="rating-cell"><span class="small-score empty">-</span><span class="muted">без оценки 48ч+</span></span></td>
                   <td><span class="soft-pill empty">Нет оценки 48ч+</span></td>
-                  <td><span class="soft-pill empty">Робот · сегодня</span></td>
+                  <td><span class="soft-pill empty">Робот</span></td>
+                  <td><span class="soft-pill empty">сегодня</span></td>
                   <td><span class="soft-pill empty">Автообзвон</span></td>
                 </tr>
                 <tr data-flags="all reaction low">
                   <td><span class="request-id">9189</span></td>
                   <td><div class="request-main"><strong>Пожарная сигнализация</strong><span>Ленина, 55, кв. 55 · Авария</span></div></td>
-                  <td><span class="soft-pill warn">Директор И. И.</span></td>
+                  <td><span class="soft-pill warn">Инженер ПТО</span></td>
                   <td><span class="sla-pill warn">С опозданием +4ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★★★☆☆</span><strong>3.0</strong></span></td>
                   <td><span class="soft-pill warn">Оценка 3</span></td>
-                  <td><span class="soft-pill empty">Мастер · 8ч</span></td>
+                  <td><span class="soft-pill empty">Мастер</span></td>
+                  <td><span class="soft-pill empty">8ч</span></td>
                   <td><span class="soft-pill empty">Проверить</span></td>
                 </tr>
                 <tr data-flags="all reaction low overdue">
                   <td><span class="request-id teal">9188</span></td>
                   <td><div class="request-main"><strong>Крыша уехала</strong><span>Ленина, 55, кв. 55 · Авария</span></div></td>
-                  <td><span class="soft-pill bad">Директор И. И.</span></td>
+                  <td><span class="soft-pill bad">Кровельщик А.</span></td>
                   <td><span class="sla-pill bad">Просрочена +6ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★☆☆☆☆</span><strong>1.0</strong></span></td>
                   <td><span class="soft-pill bad">Не решено</span></td>
-                  <td><span class="soft-pill bad">Директор · 2ч</span></td>
+                  <td><span class="soft-pill bad">Директор</span></td>
+                  <td><span class="soft-pill bad">2ч</span></td>
                   <td><span class="soft-pill bad">Вернуть в работу</span></td>
                 </tr>
                 <tr data-flags="all">
@@ -2146,6 +2157,7 @@
                   <td><span class="sla-pill good">В срок -1ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★★★★★</span><strong>5.0</strong></span></td>
                   <td><span class="soft-pill good">Нет риска</span></td>
+                  <td><span class="soft-pill empty">-</span></td>
                   <td><span class="soft-pill empty">-</span></td>
                   <td><span class="soft-pill empty">Не требуется</span></td>
                 </tr>
@@ -2161,7 +2173,7 @@
                 <div class="muted">Ленина, 55, кв. 55 · исполнитель Дежурнов В. И.</div>
               </div>
               <div class="detail-status">
-                <span class="soft-pill warn">В работе</span>
+                <span class="soft-pill warn">Возвращена в работу</span>
                 <span class="soft-pill bad">Требует реакции</span>
               </div>
             </div>
@@ -2178,13 +2190,15 @@
             <div class="comment">
               № 9191: житель оценил на 2 звезды и написал, что воду включили поздно, обратной связи не было.
             </div>
-            <div class="detail-stat"><span>Закрыто за 30 дней</span><strong>43</strong></div>
-            <div class="detail-stat"><span>Назначено сейчас</span><strong>11</strong></div>
-            <div class="detail-stat"><span>SLA в срок</span><strong>58%</strong></div>
-            <div class="detail-stat"><span>С опозданием</span><strong>6</strong></div>
-            <div class="detail-stat"><span>Просрочено сейчас</span><strong style="color:var(--red)">2</strong></div>
-            <div class="detail-stat"><span>Низкие оценки</span><strong style="color:var(--red)">7</strong></div>
+            <div class="detail-stat"><span>Статус заявки</span><strong>Закрыта, оценена, возвращена</strong></div>
+            <div class="detail-stat"><span>Оценка заявки</span><strong style="color:var(--red)">2.0</strong></div>
+            <div class="detail-stat"><span>SLA заявки</span><strong style="color:var(--orange)">+8ч</strong></div>
+            <div class="detail-stat"><span>Причина реакции</span><strong>Долго ждали</strong></div>
             <div class="detail-stat"><span>Ответственный за реакцию</span><strong>Диспетчер</strong></div>
+            <div class="detail-stat"><span>SLA реакции</span><strong style="color:var(--orange)">4ч</strong></div>
+            <div class="principle-note">
+              Контекст исполнителя: Дежурнов В. И. · оценка жителей 3.6 · SLA в срок 58% · уровень «Риск».
+            </div>
             <div class="next-step">
               Следующий шаг: связаться с жителем, зафиксировать причину низкой оценки и при необходимости вернуть заявку в работу.
             </div>
@@ -2346,12 +2360,12 @@
                 <span class="score-pill good">4.8</span>
               </div>
               <div class="performer-row">
-                <div><strong>2. Диспетчерова О. В.</strong><span class="muted">стабильно закрывает без жалоб</span></div>
+                <div><strong>2. Диспетчерова О. В.</strong><span class="muted">стабильно закрывает · 2 низкие оценки</span></div>
                 <span class="score-pill good">4.5</span>
               </div>
               <div class="performer-row">
-                <div><strong>Дежурнов В. И.</strong><span class="muted">7 низких оценок · 2 просрочены</span></div>
-                <span class="score-pill warn">3.6</span>
+                <div><strong>Дежурнов В. И.</strong><span class="muted">SLA 58% · 7 низких оценок</span></div>
+                <span class="score-pill bad">3.6</span>
               </div>
               <div class="performer-row">
                 <div><strong>Михаил Волков</strong><span class="muted">низкая оценка и SLA 38%</span></div>
@@ -2379,11 +2393,11 @@
                 <tr class="employee-row selected" data-name="Дежурнов В. И." data-role="Сантехник" data-score="3.6" data-stars="★★★★☆" data-closed="43" data-work="11" data-sla="58%" data-late="6" data-overdue="2" data-low="7" data-comment="7 низких оценок за 30 дней. Чаще всего жители жалуются на ожидание и отсутствие обратной связи.">
                   <td><button class="employee-name">Дежурнов В. И.</button></td>
                   <td>Сантехника</td>
-                  <td><span class="score-pill warn">3.6</span></td>
+                  <td><span class="score-pill bad">3.6</span></td>
                   <td>43</td>
                   <td>11</td>
                   <td>58%</td>
-                  <td><span class="soft-pill warn">Внимание</span></td>
+                  <td><span class="soft-pill bad">Риск</span></td>
                 </tr>
                 <tr class="employee-row" data-name="Гришко Г. А." data-role="Сантехник" data-score="4.8" data-stars="★★★★★" data-closed="42" data-work="5" data-sla="96%" data-late="1" data-overdue="0" data-low="1" data-comment="Лучший исполнитель месяца: высокая оценка жителей и почти все заявки закрыты в срок.">
                   <td><button class="employee-name">Гришко Г. А.</button></td>
