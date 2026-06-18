@@ -669,7 +669,7 @@
     }
 
     .request-table.simple {
-      min-width: 1180px;
+      min-width: 1280px;
     }
 
     .request-table.simple th {
@@ -684,6 +684,18 @@
     .request-table.simple td {
       padding: 14px 12px;
       font-size: 16px;
+    }
+
+    .request-table.simple .rating-cell {
+      gap: 4px;
+    }
+
+    .request-table.simple .stars {
+      display: inline-block;
+      width: 14px;
+      overflow: hidden;
+      letter-spacing: 0;
+      font-size: 14px;
     }
 
     .request-main {
@@ -1485,6 +1497,152 @@
     .service-meter.warn span { background: var(--orange); }
     .service-meter.bad span { background: var(--red); }
 
+    .insight-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .insight-card {
+      min-height: 92px;
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid rgba(33,43,54,0.08);
+      border-left: 4px solid var(--green);
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(33,43,54,0.08);
+    }
+
+    .insight-card.warn {
+      border-left-color: var(--orange);
+      background: #fffaf2;
+    }
+
+    .insight-card.bad {
+      border-left-color: var(--red);
+      background: #fff7f7;
+    }
+
+    .insight-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 4px;
+      background: #ecf8ee;
+      color: var(--green-dark);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .insight-card.warn .insight-icon {
+      background: #fff1d8;
+      color: #c77800;
+    }
+
+    .insight-card.bad .insight-icon {
+      background: #ffe8e8;
+      color: var(--red);
+    }
+
+    .insight-card strong {
+      display: block;
+      color: #202938;
+      margin-bottom: 4px;
+    }
+
+    .insight-card small {
+      color: #718092;
+      line-height: 1.25;
+    }
+
+    .metric-note {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      margin-top: 8px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: #eef6ff;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .metric-note.warn {
+      background: #fff4df;
+      color: #c77800;
+    }
+
+    .metric-note.bad {
+      background: #ffe8e8;
+      color: var(--red);
+    }
+
+    .detail-hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: start;
+      padding-bottom: 14px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-hero h2 {
+      margin-bottom: 4px;
+    }
+
+    .detail-status {
+      display: grid;
+      gap: 8px;
+      justify-items: end;
+    }
+
+    .next-step {
+      margin-top: 14px;
+      padding: 12px;
+      border: 1px solid rgba(22,135,201,0.18);
+      border-left: 4px solid var(--blue);
+      border-radius: 4px;
+      background: #f4f9ff;
+      color: #465b78;
+      line-height: 1.35;
+    }
+
+    .employee-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .employee-mini-stat {
+      min-height: 70px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .employee-mini-stat strong {
+      display: block;
+      color: #111827;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .employee-mini-stat span {
+      color: #718092;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     @media (max-width: 1180px) {
       .app {
         grid-template-columns: 88px 1fr;
@@ -1506,7 +1664,8 @@
       .quality-filters,
       .analytics-grid,
       .employee-summary,
-      .employee-card-grid {
+      .employee-card-grid,
+      .insight-strip {
         grid-template-columns: 1fr;
       }
 
@@ -1559,7 +1718,8 @@
       .quality-filters,
       .analytics-grid,
       .employee-summary,
-      .employee-card-grid {
+      .employee-card-grid,
+      .insight-strip {
         gap: 14px;
       }
 
@@ -1630,7 +1790,7 @@
 
       <div class="view-switch" aria-label="Переключение экранов макета">
         <button class="switch-button active" data-target="dashboard">Главный экран</button>
-        <button class="switch-button" data-target="quality">Качество заявок</button>
+        <button class="switch-button" data-target="quality">Оценки жителей</button>
         <button class="switch-button" data-target="requests">Модуль заявок</button>
         <button class="switch-button" data-target="employees">Сотрудники</button>
       </div>
@@ -1694,8 +1854,8 @@
       <section id="quality" class="screen">
         <div class="quality-head">
           <div>
-            <h2>Качество заявок</h2>
-            <p>Оценки жителей, SLA и заявки, требующие реакции</p>
+            <h2>Оценки жителей по заявкам</h2>
+            <p>Рейтинг формируется только из оценок жителей; SLA показан отдельно как контроль сроков</p>
           </div>
           <div class="period-switch" aria-label="Период аналитики">
             <button>7 дней</button>
@@ -1719,21 +1879,43 @@
             <div class="big">4.3</div>
             <div class="stars">★★★★☆</div>
             <div class="muted">+0.2 к прошлому периоду · 621 оценка</div>
+            <div class="metric-note">рейтинг только от жителей</div>
           </article>
           <article class="quality-metric" data-open-screen="requests" title="Открыть заявки с контролем SLA">
             <div class="label">SLA в срок</div>
             <div class="big">38%</div>
             <div class="muted">5 в срок · 3 с опозданием · 2 просрочены</div>
+            <div class="metric-note warn">операционный показатель</div>
           </article>
           <article class="quality-metric bad" data-open-screen="requests" data-filter-target="reaction" title="Открыть очередь заявок, требующих реакции">
             <div class="label">Требуют реакции</div>
             <div class="big">18</div>
             <div class="muted">низкая оценка, просрочка или нет оценки 48ч+</div>
+            <div class="metric-note bad">рабочая очередь</div>
           </article>
           <article class="quality-metric bad" data-open-screen="requests" data-filter-target="low" title="Открыть заявки с низкой оценкой">
             <div class="label">Низкие оценки</div>
             <div class="big">12</div>
             <div class="muted">оценка 1-3 от жителей после закрытия</div>
+            <div class="metric-note bad">разобрать причины</div>
+          </article>
+        </div>
+
+        <div class="insight-strip">
+          <article class="insight-card bad">
+            <div class="insight-icon">!</div>
+            <div><strong>Сначала разобрать 4 заявки</strong><small>низкая оценка вместе с просрочкой или жалобой жителя</small></div>
+            <button class="mini-button primary" data-open-screen="requests" data-filter-target="reaction">Открыть</button>
+          </article>
+          <article class="insight-card warn">
+            <div class="insight-icon">%</div>
+            <div><strong>SLA просел на 3-4 неделе</strong><small>проверить нагрузку сантехников и электриков в этот период</small></div>
+            <button class="mini-button" data-open-screen="employees">Службы</button>
+          </article>
+          <article class="insight-card">
+            <div class="insight-icon">★</div>
+            <div><strong>Лучших можно отметить</strong><small>Гришко и Диспетчерова держат высокий рейтинг и SLA</small></div>
+            <button class="mini-button" data-open-screen="employees">Рейтинг</button>
           </article>
         </div>
 
@@ -1819,20 +2001,21 @@
           <div class="panel-head">
             <div>
               <div class="panel-kicker">Очередь реакции</div>
-              <h2>Заявки с риском качества</h2>
+              <h2>Очередь реакции по качеству</h2>
             </div>
             <button class="mini-button primary" data-open-screen="requests" data-filter-target="reaction">Открыть в заявках</button>
           </div>
           <table class="request-table simple quality-table">
             <thead>
               <tr>
-                <th style="width:110px">№</th>
-                <th>Заявка</th>
-                <th style="width:190px">Исполнитель</th>
-                <th style="width:150px">Оценка</th>
-                <th style="width:170px">SLA</th>
-                <th style="width:210px">Причина реакции</th>
-                <th style="width:170px">Действие</th>
+                <th style="width:90px">№</th>
+                <th>Заявка и адрес</th>
+                <th style="width:160px">Исполнитель</th>
+                <th style="width:120px">Оценка</th>
+                <th style="width:140px">SLA</th>
+                <th style="width:170px">Причина</th>
+                <th style="width:130px">Ответственный</th>
+                <th style="width:150px">Действие</th>
               </tr>
             </thead>
             <tbody>
@@ -1842,7 +2025,8 @@
                 <td><span class="soft-pill bad">Директор И. И.</span></td>
                 <td><span class="rating-cell"><span class="stars">★☆☆☆☆</span><strong>1.0</strong></span></td>
                 <td><span class="sla-pill bad">Просрочена +6ч</span></td>
-                <td><span class="soft-pill bad">Не решено</span></td>
+                <td><span class="soft-pill bad">Проблема не решена</span></td>
+                <td><span class="soft-pill bad">Директор</span></td>
                 <td><button class="mini-button primary">Вернуть в работу</button></td>
               </tr>
               <tr>
@@ -1852,6 +2036,7 @@
                 <td><span class="rating-cell"><span class="stars">★★☆☆☆</span><strong>2.0</strong></span></td>
                 <td><span class="sla-pill warn">С опозданием +8ч</span></td>
                 <td><span class="soft-pill warn">Долго ждали</span></td>
+                <td><span class="soft-pill warn">Диспетчер</span></td>
                 <td><button class="mini-button">Связаться</button></td>
               </tr>
               <tr>
@@ -1861,6 +2046,7 @@
                 <td><span class="muted">нет оценки</span></td>
                 <td><span class="sla-pill good">В срок -2ч</span></td>
                 <td><span class="soft-pill empty">Без оценки 48ч+</span></td>
+                <td><span class="soft-pill empty">Диспетчер</span></td>
                 <td><button class="mini-button">Запросить оценку</button></td>
               </tr>
             </tbody>
@@ -1885,13 +2071,6 @@
             <button class="request-status-tab">Выполнены<small>408</small></button>
             <button class="request-status-tab">Закрыты<small>452</small></button>
           </div>
-          <div class="chips" style="padding-top: 18px">
-            <button class="chip" data-filter="all">Все <span class="soft-pill empty">10</span></button>
-            <button class="chip urgent active" data-filter="reaction">Требуют реакции <span class="soft-pill bad">4</span></button>
-            <button class="chip" data-filter="low">С низкой оценкой <span class="soft-pill empty">3</span></button>
-            <button class="chip" data-filter="overdue">Просроченные <span class="soft-pill empty">2</span></button>
-            <button class="chip" data-filter="norate">Без оценки 48ч+ <span class="soft-pill empty">1</span></button>
-          </div>
         </section>
 
         <div class="requests-layout">
@@ -1899,13 +2078,14 @@
             <table class="request-table simple">
               <thead>
                 <tr>
-                  <th style="width:110px">№</th>
+                  <th style="width:90px">№</th>
                   <th>Заявка</th>
-                  <th style="width:210px">Исполнитель</th>
-                  <th style="width:170px">SLA</th>
-                  <th style="width:150px">Оценка</th>
-                  <th style="width:190px">Причина</th>
-                  <th style="width:190px">Реакция</th>
+                  <th style="width:170px">Исполнитель</th>
+                  <th style="width:150px">SLA</th>
+                  <th style="width:120px">Оценка</th>
+                  <th style="width:160px">Причина</th>
+                  <th style="width:135px">Ответственный</th>
+                  <th style="width:150px">Действие</th>
                 </tr>
               </thead>
               <tbody>
@@ -1916,6 +2096,7 @@
                   <td><span class="sla-pill good">В срок -6ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★★★★★</span><strong>5.0</strong></span></td>
                   <td><span class="soft-pill good">Нет риска</span></td>
+                  <td><span class="soft-pill empty">-</span></td>
                   <td><span class="soft-pill empty">Не требуется</span></td>
                 </tr>
                 <tr class="selected" data-flags="all reaction low overdue">
@@ -1925,7 +2106,8 @@
                   <td><span class="sla-pill warn">С опозданием +8ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★★☆☆☆</span><strong>2.0</strong></span></td>
                   <td><span class="soft-pill warn">Долго ждали</span></td>
-                  <td><span class="soft-pill warn">В работе · Диспетчер</span></td>
+                  <td><span class="soft-pill warn">Диспетчер</span></td>
+                  <td><span class="soft-pill warn">Связаться</span></td>
                 </tr>
                 <tr data-flags="all reaction norate">
                   <td><span class="request-id blue">9190</span></td>
@@ -1934,6 +2116,7 @@
                   <td><span class="sla-pill good">В срок -2ч</span></td>
                   <td><span class="rating-cell"><span class="small-score empty">-</span><span class="muted">без оценки 48ч+</span></span></td>
                   <td><span class="soft-pill empty">Нет оценки 48ч+</span></td>
+                  <td><span class="soft-pill empty">Диспетчер</span></td>
                   <td><span class="soft-pill empty">Запросить оценку</span></td>
                 </tr>
                 <tr data-flags="all reaction low">
@@ -1943,7 +2126,8 @@
                   <td><span class="sla-pill warn">С опозданием +4ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★★★☆☆</span><strong>3.0</strong></span></td>
                   <td><span class="soft-pill warn">Оценка 3</span></td>
-                  <td><span class="soft-pill empty">Новая · Мастер</span></td>
+                  <td><span class="soft-pill empty">Мастер</span></td>
+                  <td><span class="soft-pill empty">Проверить</span></td>
                 </tr>
                 <tr data-flags="all reaction low overdue">
                   <td><span class="request-id teal">9188</span></td>
@@ -1952,7 +2136,8 @@
                   <td><span class="sla-pill bad">Просрочена +6ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★☆☆☆☆</span><strong>1.0</strong></span></td>
                   <td><span class="soft-pill bad">Не решено</span></td>
-                  <td><span class="soft-pill bad">Новая · Директор</span></td>
+                  <td><span class="soft-pill bad">Директор</span></td>
+                  <td><span class="soft-pill bad">Вернуть в работу</span></td>
                 </tr>
                 <tr data-flags="all">
                   <td><span class="request-id green">9187</span></td>
@@ -1961,6 +2146,7 @@
                   <td><span class="sla-pill good">В срок -1ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★★★★★</span><strong>5.0</strong></span></td>
                   <td><span class="soft-pill good">Нет риска</span></td>
+                  <td><span class="soft-pill empty">-</span></td>
                   <td><span class="soft-pill empty">Не требуется</span></td>
                 </tr>
               </tbody>
@@ -1968,18 +2154,26 @@
           </section>
 
           <aside class="detail-panel">
-            <div class="panel-kicker">Карточка качества</div>
-            <h2>Дежурнов В. И.</h2>
-            <div class="muted">Сантехник</div>
+            <div class="detail-hero">
+              <div>
+                <div class="panel-kicker">Карточка качества заявки</div>
+                <h2>№ 9191 · Авария / Водоснабжение</h2>
+                <div class="muted">Ленина, 55, кв. 55 · исполнитель Дежурнов В. И.</div>
+              </div>
+              <div class="detail-status">
+                <span class="soft-pill warn">В работе</span>
+                <span class="soft-pill bad">Требует реакции</span>
+              </div>
+            </div>
             <div class="detail-score">
               <div class="score-large" style="background:var(--orange)">3.6</div>
               <div>
                 <div class="stars">★★★★☆</div>
-                <div class="muted">оценка жителей · 29 оценок</div>
+                <div class="muted">рейтинг исполнителя · 29 оценок</div>
               </div>
             </div>
             <div class="principle-note">
-              Оценка и SLA считаются отдельно. Оценка — мнение жителя, SLA — соблюдение срока.
+              Оценка заявки — 2.0 от жителя. Рейтинг исполнителя показан рядом, SLA считается отдельно.
             </div>
             <div class="comment">
               № 9191: житель оценил на 2 звезды и написал, что воду включили поздно, обратной связи не было.
@@ -1991,6 +2185,9 @@
             <div class="detail-stat"><span>Просрочено сейчас</span><strong style="color:var(--red)">2</strong></div>
             <div class="detail-stat"><span>Низкие оценки</span><strong style="color:var(--red)">7</strong></div>
             <div class="detail-stat"><span>Ответственный за реакцию</span><strong>Диспетчер</strong></div>
+            <div class="next-step">
+              Следующий шаг: связаться с жителем, зафиксировать причину низкой оценки и при необходимости вернуть заявку в работу.
+            </div>
             <div class="action-row">
               <button class="action-button primary">Связаться</button>
               <button class="action-button warn">Поставить задачу</button>
@@ -2064,6 +2261,24 @@
           </article>
         </div>
 
+        <div class="insight-strip">
+          <article class="insight-card bad">
+            <div class="insight-icon">5</div>
+            <div><strong>Пять сотрудников требуют внимания</strong><small>оценка ниже 3.5 или SLA ниже 60% за последние 30 дней</small></div>
+            <button class="mini-button primary">Показать</button>
+          </article>
+          <article class="insight-card warn">
+            <div class="insight-icon">↘</div>
+            <div><strong>Разнорабочие просели по SLA</strong><small>44% в срок, 9 просрочек, средняя оценка 2.9</small></div>
+            <button class="mini-button">Служба</button>
+          </article>
+          <article class="insight-card">
+            <div class="insight-icon">★</div>
+            <div><strong>Есть сотрудники для поощрения</strong><small>Гришко и Диспетчерова держат высокую оценку жителей</small></div>
+            <button class="mini-button">Лучшие</button>
+          </article>
+        </div>
+
         <div class="quality-two-col">
           <section class="wide-panel">
             <div class="panel-head">
@@ -2097,7 +2312,7 @@
             <div class="panel-head">
               <div>
                 <div class="panel-kicker">Рейтинг</div>
-                <h2>Лучшие и рисковые сотрудники</h2>
+                <h2>Кого отметить / кому помочь</h2>
               </div>
             </div>
             <div class="performer-list">
@@ -2199,12 +2414,17 @@
             <div class="comment" id="employee-card-comment">
               7 низких оценок за 30 дней. Чаще всего жители жалуются на ожидание и отсутствие обратной связи.
             </div>
-            <div class="detail-stat"><span>Закрыто за 30 дней</span><strong id="employee-card-closed">43</strong></div>
-            <div class="detail-stat"><span>Сейчас в работе</span><strong id="employee-card-work">11</strong></div>
-            <div class="detail-stat"><span>SLA в срок</span><strong id="employee-card-sla">58%</strong></div>
+            <div class="employee-detail-grid">
+              <div class="employee-mini-stat"><strong id="employee-card-closed">43</strong><span>закрыто за 30 дней</span></div>
+              <div class="employee-mini-stat"><strong id="employee-card-work">11</strong><span>сейчас в работе</span></div>
+              <div class="employee-mini-stat"><strong id="employee-card-sla">58%</strong><span>SLA в срок</span></div>
+              <div class="employee-mini-stat"><strong id="employee-card-overdue" style="color:var(--red)">2</strong><span>просрочено сейчас</span></div>
+            </div>
             <div class="detail-stat"><span>С опозданием выполнено</span><strong id="employee-card-late">6</strong></div>
-            <div class="detail-stat"><span>Просрочено сейчас</span><strong id="employee-card-overdue" style="color:var(--red)">2</strong></div>
             <div class="detail-stat"><span>Низкие оценки</span><strong id="employee-card-low" style="color:var(--red)">7</strong></div>
+            <div class="next-step">
+              Последние проблемные заявки: №9191 «Авария / Водоснабжение», №9188 «Крыша уехала», №9176 «Нет обратной связи».
+            </div>
             <div class="action-row">
               <button class="action-button primary">Связаться</button>
               <button class="action-button warn">Поставить задачу</button>
