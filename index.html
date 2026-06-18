@@ -1884,7 +1884,7 @@
           <article class="quality-metric" data-open-screen="requests" title="Открыть заявки с контролем SLA">
             <div class="label">SLA в срок</div>
             <div class="big">38%</div>
-            <div class="muted">5 в срок · 3 с опозданием · 2 просрочены</div>
+            <div class="muted">из 10 закрытых заявок с нормой SLA за период</div>
             <div class="metric-note warn">операционный показатель</div>
           </article>
           <article class="quality-metric bad" data-open-screen="requests" data-filter-target="reaction" title="Открыть очередь заявок, требующих реакции">
@@ -1909,7 +1909,7 @@
           </article>
           <article class="insight-card warn">
             <div class="insight-icon">%</div>
-            <div><strong>SLA просел на 3-4 неделе</strong><small>проверить нагрузку сантехников и электриков в этот период</small></div>
+            <div><strong>SLA просел на 3-4 неделе</strong><small>правило: рост закрытий + падение SLA у сантехники и электрики</small></div>
             <button class="mini-button" data-open-screen="employees">Службы</button>
           </article>
           <article class="insight-card">
@@ -1978,11 +1978,11 @@
             </div>
             <div class="performer-list">
               <div class="performer-row">
-                <div><strong>1. Гришко Г. А.</strong><span class="muted">42 закрыто · SLA 96%</span></div>
+                <div><strong>1. Гришко Г. А.</strong><span class="muted">42 закрыто · SLA 96% · с учетом категории</span></div>
                 <span class="score-pill good">4.8</span>
               </div>
               <div class="performer-row">
-                <div><strong>2. Диспетчерова О. В.</strong><span class="muted">66 закрыто · SLA 88%</span></div>
+                <div><strong>2. Диспетчерова О. В.</strong><span class="muted">66 закрыто · SLA 88% · диспетчерская</span></div>
                 <span class="score-pill good">4.5</span>
               </div>
               <div class="performer-row">
@@ -2026,7 +2026,7 @@
                 <td><span class="rating-cell"><span class="stars">★☆☆☆☆</span><strong>1.0</strong></span></td>
                 <td><span class="sla-pill bad">Просрочена +6ч</span></td>
                 <td><span class="soft-pill bad">Проблема не решена</span></td>
-                <td><span class="soft-pill bad">Директор</span></td>
+                <td><span class="soft-pill bad">Директор · 2ч</span></td>
                 <td><button class="mini-button primary">Вернуть в работу</button></td>
               </tr>
               <tr>
@@ -2036,7 +2036,7 @@
                 <td><span class="rating-cell"><span class="stars">★★☆☆☆</span><strong>2.0</strong></span></td>
                 <td><span class="sla-pill warn">С опозданием +8ч</span></td>
                 <td><span class="soft-pill warn">Долго ждали</span></td>
-                <td><span class="soft-pill warn">Диспетчер</span></td>
+                <td><span class="soft-pill warn">Диспетчер · 4ч</span></td>
                 <td><button class="mini-button">Связаться</button></td>
               </tr>
               <tr>
@@ -2046,8 +2046,8 @@
                 <td><span class="muted">нет оценки</span></td>
                 <td><span class="sla-pill good">В срок -2ч</span></td>
                 <td><span class="soft-pill empty">Без оценки 48ч+</span></td>
-                <td><span class="soft-pill empty">Диспетчер</span></td>
-                <td><button class="mini-button">Запросить оценку</button></td>
+                <td><span class="soft-pill empty">Робот · сегодня</span></td>
+                <td><button class="mini-button">Автообзвон</button></td>
               </tr>
             </tbody>
           </table>
@@ -2106,7 +2106,7 @@
                   <td><span class="sla-pill warn">С опозданием +8ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★★☆☆☆</span><strong>2.0</strong></span></td>
                   <td><span class="soft-pill warn">Долго ждали</span></td>
-                  <td><span class="soft-pill warn">Диспетчер</span></td>
+                  <td><span class="soft-pill warn">Диспетчер · 4ч</span></td>
                   <td><span class="soft-pill warn">Связаться</span></td>
                 </tr>
                 <tr data-flags="all reaction norate">
@@ -2116,8 +2116,8 @@
                   <td><span class="sla-pill good">В срок -2ч</span></td>
                   <td><span class="rating-cell"><span class="small-score empty">-</span><span class="muted">без оценки 48ч+</span></span></td>
                   <td><span class="soft-pill empty">Нет оценки 48ч+</span></td>
-                  <td><span class="soft-pill empty">Диспетчер</span></td>
-                  <td><span class="soft-pill empty">Запросить оценку</span></td>
+                  <td><span class="soft-pill empty">Робот · сегодня</span></td>
+                  <td><span class="soft-pill empty">Автообзвон</span></td>
                 </tr>
                 <tr data-flags="all reaction low">
                   <td><span class="request-id">9189</span></td>
@@ -2126,7 +2126,7 @@
                   <td><span class="sla-pill warn">С опозданием +4ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★★★☆☆</span><strong>3.0</strong></span></td>
                   <td><span class="soft-pill warn">Оценка 3</span></td>
-                  <td><span class="soft-pill empty">Мастер</span></td>
+                  <td><span class="soft-pill empty">Мастер · 8ч</span></td>
                   <td><span class="soft-pill empty">Проверить</span></td>
                 </tr>
                 <tr data-flags="all reaction low overdue">
@@ -2136,7 +2136,7 @@
                   <td><span class="sla-pill bad">Просрочена +6ч</span></td>
                   <td><span class="rating-cell"><span class="stars">★☆☆☆☆</span><strong>1.0</strong></span></td>
                   <td><span class="soft-pill bad">Не решено</span></td>
-                  <td><span class="soft-pill bad">Директор</span></td>
+                  <td><span class="soft-pill bad">Директор · 2ч</span></td>
                   <td><span class="soft-pill bad">Вернуть в работу</span></td>
                 </tr>
                 <tr data-flags="all">
@@ -2166,14 +2166,14 @@
               </div>
             </div>
             <div class="detail-score">
-              <div class="score-large" style="background:var(--orange)">3.6</div>
+              <div class="score-large" style="background:var(--red)">2.0</div>
               <div>
-                <div class="stars">★★★★☆</div>
-                <div class="muted">рейтинг исполнителя · 29 оценок</div>
+                <div class="stars">★★☆☆☆</div>
+                <div class="muted">оценка этой заявки от жителя</div>
               </div>
             </div>
             <div class="principle-note">
-              Оценка заявки — 2.0 от жителя. Рейтинг исполнителя показан рядом, SLA считается отдельно.
+              Рейтинг исполнителя: 3.6 по 29 оценкам. SLA заявки: с опозданием +8ч. Эти показатели не смешиваются.
             </div>
             <div class="comment">
               № 9191: житель оценил на 2 звезды и написал, что воду включили поздно, обратной связи не было.
@@ -2202,6 +2202,7 @@
               <div>
                 <div class="panel-kicker">Динамика по жителям</div>
                 <h2>Оценка исполнителя за 6 недель</h2>
+                <div class="muted">-0.7 — изменение средней оценки от первой к последней неделе</div>
               </div>
               <span class="score-pill warn">-0.7</span>
             </div>
@@ -2257,7 +2258,7 @@
           <article class="quality-metric bad">
             <div class="label">Требуют внимания</div>
             <div class="big">5</div>
-            <div class="muted">низкая оценка или SLA ниже порога</div>
+            <div class="muted">оценка ниже 3.5 или SLA ниже 60%</div>
           </article>
         </div>
 
@@ -2279,6 +2280,22 @@
           </article>
         </div>
 
+        <section class="wide-panel" style="min-height:auto; margin-bottom:18px">
+          <div class="panel-head">
+            <div>
+              <div class="panel-kicker">Методология</div>
+              <h2>Пороги уровней сотрудников</h2>
+            </div>
+            <span class="soft-pill empty">настраивается</span>
+          </div>
+          <div class="signal-list">
+            <div class="signal"><span class="dot"></span><div><strong>Эксперт</strong><span class="muted">оценка жителей от 4.6 и SLA от 90%, минимум 15 оценок</span></div><span>зелёный</span></div>
+            <div class="signal"><span class="dot blue"></span><div><strong>Профи</strong><span class="muted">оценка 4.1-4.59 и SLA от 75%</span></div><span>синий</span></div>
+            <div class="signal"><span class="dot orange"></span><div><strong>Внимание</strong><span class="muted">оценка 3.5-4.09 или SLA 60-74%</span></div><span>оранжевый</span></div>
+            <div class="signal"><span class="dot red"></span><div><strong>Риск</strong><span class="muted">оценка ниже 3.5 или SLA ниже 60%, сравнение ведётся внутри категории заявки</span></div><span>красный</span></div>
+          </div>
+        </section>
+
         <div class="quality-two-col">
           <section class="wide-panel">
             <div class="panel-head">
@@ -2286,7 +2303,7 @@
                 <div class="panel-kicker">Службы</div>
                 <h2>Качество работы служб</h2>
               </div>
-              <span class="soft-pill good">4 службы</span>
+              <span class="soft-pill good">6 служб</span>
             </div>
             <div class="service-quality">
               <div class="service-row">
@@ -2303,6 +2320,14 @@
               </div>
               <div class="service-row">
                 <div><strong>Разнорабочие</strong><span class="muted">оценка 2.9 · SLA 44% · 9 просрочены</span></div>
+                <div class="service-meter bad"><span style="width:44%"></span></div>
+              </div>
+              <div class="service-row">
+                <div><strong>Диспетчерская</strong><span class="muted">оценка 4.5 · SLA 88% · 0 просрочены</span></div>
+                <div class="service-meter"><span style="width:88%"></span></div>
+              </div>
+              <div class="service-row">
+                <div><strong>Бухгалтерия</strong><span class="muted">оценка 2.9 · SLA 44% · нужна отдельная норма ответа</span></div>
                 <div class="service-meter bad"><span style="width:44%"></span></div>
               </div>
             </div>
